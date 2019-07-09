@@ -1,0 +1,446 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <base>
+
+
+    <link rel="stylesheet" href="/GiaoDienAdmin/dist/css/AdminLTE.min.css">
+    <link href="/GiaoDienAdmin/bootstrap/css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/alter.css" rel="stylesheet" />
+
+    <link href="/GiaoDienAdmin/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/ionicons.min.css" rel="stylesheet" />
+
+    <script src="/GiaoDienAdmin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/ckeditor/ckeditor.js"></script>
+    <link href="/GiaoDienAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/corecss.css" rel="stylesheet" />
+
+
+    <link href="/GiaoDienAdmin/cssFolder/csschiakhung.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/window.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/windowall.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/jtreecsssss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="browser.css">
+
+    <style>
+        #dragTree {
+            padding: 10px;
+        }
+
+        .content {
+            padding-top: 50px !important;
+        }
+
+        .btn-block + .btn-block {
+            margin: 0px !important;
+        }
+
+        .btn-block {
+            display: inherit !important;
+            width: inherit !important;
+        }
+
+        .modal-dialog {
+            width: 300px !important;
+            margin: 150px auto !important;
+        }
+
+        .x-item-textbox {
+            width: 96px;
+            border: none;
+            text-align: center;
+        }
+
+        .panel-right {
+            padding: 0px !important;
+        }
+
+        .nav-tabs-custom {
+            box-shadow: none !important;
+        }
+
+        .x-grid-body {
+            border-width: 0px;
+            border-style: none !important;
+        }
+
+        #chiasesudung {
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="content">
+        <div class="panel-container">
+            <div class="panel-left  box box-primary ">
+                <div class="box-header with-border">
+                    <h3 class="box-title">THƯ MỤC ẢNH</h3>
+                </div>
+                <div id="dragTree">
+                </div>
+            </div>
+            <div class="splitter">
+            </div>
+            <div class="panel-right">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs" id="ulmenu">
+                                <li class="active" id="lidanhsach"><a href="#danhsachanhhienthi" data-toggle="tab" aria-expanded="false"><i class="fa  fa-list-ul iconTab"></i>Danh sách file từ server</a></li>
+                                <li class="" id="liaddnew" style="display: none"><a href="#uploadvaothumuc" data-toggle="tab" aria-expanded="false"><i class="fa fa-edit iconTab"></i>Chọn ảnh từ desktop</a></li>
+                            </ul>
+                            <div class="tab-content" id="frmnoidung">
+                                <div class="tab-pane active box-body" id="danhsachanhhienthi">
+                                    
+                                    <!--<ul class="folder-switcher" id="js-folder-switcher"></ul>
+                                    <div class="images-container" id="js-images-container">Loading..</div>-->
+
+                                    <div class="x-panel x-fit-item x-panel-default" style="width: 100%; height: 700px; margin: 0px;" role="presentation" id="fileManager">
+                                        <div id="fileManager-bodyWrap" data-ref="bodyWrap" class="x-panel-bodyWrap" role="presentation">
+                                            <div id="fileManager-body" data-ref="body" class="x-panel-body x-panel-body-default x-border-layout-ct x-panel-body-default x-docked-noborder-top x-docked-noborder-right x-docked-noborder-bottom x-docked-noborder-left" role="presentation" style="width: 100%; height: 100%; left: 0px; top: 0px;">
+                                                <div class="x-container x-border-item x-box-item x-container-default" style="border-width: 0px; margin: 0px; width: 100%; right: auto; /* left: 205px; *//* top: 190px; */height: 100%;" role="presentation" id="ext-comp-1065">
+                                                    <div class="x-component x-dataview x-unselectable x-grid-body x-fit-item x-component-default x-scroller" role="listbox" aria-hidden="false" aria-disabled="false" aria-multiselectable="true" id="dataview-1066" tabindex="0" data-componentid="dataview-1066" style="overflow: auto; margin: 0px; width: 100%; height: 100%;">
+                                                        <ul class="x-items" id="dataimages"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="tab-pane " id="uploadvaothumuc" style="min-height: 400px;padding-top:20px">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-9">
+                                                <input type="file" accept="image/*" id="anhdaidien" title="Chọn ảnh từ máy tính (nhỏ hơn 10 mb)" />
+                                                <div class="" style="padding-top: 15px">
+                                                    <div id="preview" class="col-sm-6">
+                                                    </div>
+                                                    <div id="thongtin" class="col-sm-6">
+                                                        <p id="name"></p>
+                                                        <p id="size"></p>
+                                                        <p id="type"></p>
+                                                        <p id="kicthuoc" style="display: none"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="button" class="btn btn-primary btn-flat IconButtonPage" id="btnUploadFile"><i class="fa fa-upload iconButtonPage" aria-hidden="true"></i>Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="/GiaoDienAdmin/bootstrap/js/sweetalert2.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/alter.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/commonAlter.js"></script>
+
+    <script src="/GiaoDienAdmin/cssFolder/jtreemin.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/jquery-sezizable.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/windowall.js"></script>
+
+    <script type="text/javascript">
+        var stringTookenServer;
+        $(document).ready(function () {
+            $.getJSON('/SourceAdmin/ashx/XuLyAdmin.ashx', { type: 'getTookenByServer' }, function (danhsach) {
+                stringTookenServer = "";
+                console.log(danhsach);
+                if (danhsach != "") {
+                    stringTookenServer = danhsach.tooken;
+                }
+                else {
+                    stringTookenServer = "tooken fail";
+                }
+            });
+        });
+
+        $('#liaddnew').click(function () {
+            $(this).addClass('active');
+            $('#uploadvaothumuc').addClass('active');
+            $('#danhsachanhhienthi').removeClass('active');
+            $('#lidanhsach').removeClass('active');
+        });
+        $('#lidanhsach').click(function () {
+            $('#lidanhsach').addClass('active');
+            $('#danhsachanhhienthi').addClass('active');
+
+            $('#liaddnew').removeClass('active');
+            $('#uploadvaothumuc').removeClass('active');
+
+            hienthidanhsachanhtheothumuc();
+        });
+
+        $("#anhdaidien").change(function () {
+            renderImage(this.files[0])
+        });
+
+        
+        $(".panel-left").resizable({
+            handleSelector: ".splitter",
+            resizeHeight: false
+        });
+        $(".panel-top").resizable({
+            handleSelector: ".splitter-horizontal",
+            resizeWidth: false
+        });
+
+        var $menuthumuc = $('#dragTree');
+        var $dragTree = $('#dragTree');
+        $menuthumuc.jstree({
+            'core': {
+                'data': {
+                    'url': function (node) {
+                        return node.id === '#' ? '/SourceAdmin/ashx/XuLyAdmin.ashx?type=loaddanhsachthumucanh&id_tm=0' : '/SourceAdmin/ashx/XuLyAdmin.ashx?type=loaddanhsachthumucanh&id_tm=' + node.id;
+                    },
+                    'data': function (node) {
+                        return { 'id': node.id };
+                    }
+                },
+                'themes': {
+                    'responsive': false
+                }
+            },
+            'contextmenu': {
+                'items': function (node) {
+                    var tmp = $.jstree.defaults.contextmenu.items();
+                    delete tmp.create.action;
+
+                    var node_selected = $('#dragTree').jstree('get_selected', true);
+                    var _nodeGoc = node_selected[0].parent;
+                }
+            },
+            'types': {
+                'default': {
+                    'icon': 'fa fa-folder'
+                },
+                'file': {
+                    'icon': 'fa fa-file'
+                }
+            },
+            'unique': {
+                'duplicate': function (name, counter) {
+                    return name + ' ' + counter;
+                }
+            },
+            'plugins': ['state', 'dnd', 'sort', 'types', 'contextmenu', 'unique']
+        }).bind('select_node.jstree', function (e, data) {
+            var _idthumuc = "";
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            var idPar = node_selected[0].parent;
+            var idMe = node_selected[0].id;
+
+
+            if (idPar == "#" && idMe == 1) {
+                $('#lidanhsach').addClass('active');
+                $('#danhsachanhhienthi').addClass('active');
+                $('#liaddnew').removeClass('active');
+                $('#uploadvaothumuc').removeClass('active');
+
+                hienthidanhsachanhchiase();
+            }
+            else {
+                hienthidanhsachanhtheothumuc();
+            }
+        })
+
+
+        function hienthidanhsachanhchiase() {
+            $('#liaddnew').attr('style', 'display:none')
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+
+            var tableIMG = $.getJSON('/SourceAdmin/ashx/imagebrowser.ashx', { type: 'Showdanhsachanhduocchiase' }, function (kq) {
+                //var $imagesContainer = $('#js-images-container');
+                //$.each(kq, function (_idx, imageData) {
+                //    console.log(_idx);
+                //    console.log(imageData);
+
+                //    $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><img src='" + imageData.image + "'></a>");
+                //});
+
+
+                //$(document).on('click', '.js-image-link', function () {
+                //    console.log($(this).data('url'));
+                //    window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, $(this).data('url'));
+                //    window.close();
+                //});
+
+
+                var $ul = $("#dataimages");
+                $ul.empty();
+                var idex = 0;
+                var check = true;
+                $.each(kq, function (_idx, imageData) {
+                    var li = $('<li/>', {
+                        class: 'x-item x-layout-largeicons',
+                        html: "<span class='x-item-icon' id='ext-element-22'><span class='x-item-thumbnail'><img class='' src='" + imageData.image + "' width='90px' height='90px' id='ext-element-21'></span></span>"
+                    }).appendTo($ul);
+
+                    li.hover(function () {
+                        li.toggleClass('x-item-over');
+                    });
+                    li.dblclick(function () {
+                        window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, imageData.image);
+                            window.close();
+                    });
+                    idex++;
+                });
+
+
+            });
+        }
+        function hienthidanhsachanhtheothumuc() {
+            $('#liaddnew').removeAttr('style');
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            var idPar = node_selected[0];
+            var _idthumuc = idPar.id;
+            var tableIMG = $.getJSON('/SourceAdmin/ashx/imagebrowser.ashx', { type: 'Showdanhsachdulieutrongthumuc', _idthumuc: _idthumuc }, function (kq) {
+                //var $imagesContainer = $('#js-images-container');
+                //$.each(kq, function (_idx, imageData) {
+                //    console.log(_idx);
+                //    console.log(imageData);
+
+                //    $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><img src='" + imageData.image + "'></a>");
+                //});
+
+
+                //$(document).on('click', '.js-image-link', function () {
+                //    console.log($(this).data('url'));
+                //    window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, $(this).data('url'));
+                //    window.close();
+                //});
+
+
+                var $ul = $("#dataimages");
+                $ul.empty();
+                var idex = 0;
+                var check = true;
+                $.each(kq, function (_idx, imageData) {
+                    var li = $('<li/>', {
+                        class: 'x-item x-layout-largeicons',
+                        html: "<span class='x-item-icon' id='ext-element-22'><span class='x-item-thumbnail'><img class='' src='" + imageData.image + "' width='90px' height='90px' id='ext-element-21'></span></span>"
+                    }).appendTo($ul);
+
+                    li.hover(function () {
+                        li.toggleClass('x-item-over');
+                    });
+                    li.dblclick(function () {
+                        window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, imageData.image);
+                        window.close();
+                    });
+                    idex++;
+                });
+
+
+            });
+        }
+
+        $('#btnUploadFile').click(function () {
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+            _idthumuc = "";
+            var check = true;
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            _idthumuc = node_selected[0].id;
+
+            var anhdaidien = $('#anhdaidien').val();
+            var dungluong = $('#kicthuoc').text();
+
+
+
+            var fd_data = new FormData();
+            fd_data.append('type', 'uploadfileanhtuserver');
+            fd_data.append('fileanh', $('#anhdaidien')[0].files[0]);
+            fd_data.append('_idthumuc', _idthumuc);
+            fd_data.append('dungluong', dungluong);
+            fd_data.append('stringTookenClient', stringTookenServer);
+
+            if (_idthumuc == "") {
+                check = false;
+                $loading.remove();
+                common.showNotification('top', 'right', 'Mời bạn chọn folder lưu ảnh');
+            } else if (anhdaidien == "") {
+                check = false;
+                $loading.remove();
+                common.showNotification('top', 'right', 'Mời bạn chọn ảnh cần upload');
+            }
+
+            if (check) {
+                $.ajax({
+                    type: "POST",
+                    url: "/SourceAdmin/ashx/XuLyAdmin.ashx",
+                    data: fd_data,
+                    contentType: false,
+                    processData: false,
+                    success: function (kq) {
+                        var data = JSON.parse(kq);
+                        if (data.sucess) {
+                            swal('Thông báo ', data.msg, 'success')
+                            $('#preview').html('');
+                            $('#anhdaidien').val('');
+                            $('#name').html('');
+                            $('#size').html('');
+                            $('#type').html('');
+
+                            window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, data.linkResponse);
+                            window.close();
+
+
+                        } else {
+                            swal('Thông báo ', data.msg, 'error')
+                        }
+                    }
+                });
+            }
+        });
+
+        function humanFileSize(bytes, si) {
+            var thresh = si ? 1000 : 1024;
+            if (bytes < thresh) return bytes + ' B';
+            var units = si ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'] : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+            var u = -1;
+            do {
+                bytes /= thresh;
+                ++u;
+            } while (bytes >= thresh);
+            return bytes.toFixed(1) + ' ' + units[u];
+        }
+        function renderImage(file) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                the_url = event.target.result
+                $('#preview').html("<img src='" + the_url + "' width='200px' height='100px' />")
+                $('#name').html("Tên ảnh : " + file.name)
+                $('#size').html("Dung lượng : " + humanFileSize(file.size, "MB"))
+                $('#type').html("Kiểu ảnh : " + file.type)
+                $('#kicthuoc').html(humanFileSize(file.size, "MB"))
+            }
+            reader.readAsDataURL(file);
+        }
+    </script>
+
+</body>
+</html>

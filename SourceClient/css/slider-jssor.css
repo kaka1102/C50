@@ -1,0 +1,347 @@
+/* jssor slider arrow navigator skin 02 css */
+/*
+.jssora02l                  (normal)
+.jssora02r                  (normal)
+.jssora02l:hover            (normal mouseover)
+.jssora02r:hover            (normal mouseover)
+.jssora02l.jssora02ldn      (mousedown)
+.jssora02r.jssora02rdn      (mousedown)
+.jssora02l.jssora02lds      (disabled)
+.jssora02r.jssora02rds      (disabled)
+*/
+/*.jssora02l, .jssora02r {
+    display: block;
+    position: absolute;
+     size of arrow element 
+    width: 55px;
+    height: 55px;
+    color: #181818;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    background: #ededed;
+    overflow: hidden;
+}
+.jssora02l { background-position: -3px -33px; }
+.jssora02r { background-position: -63px -33px; }
+.jssora02l img, .jssora02r img{
+    display: inline-block;
+    margin-top: -30px;
+}
+.jssora02l:hover { background-position: -123px -33px; }
+.jssora02r:hover { background-position: -183px -33px; }
+.jssora02l.jssora02ldn { background-position: -3px -33px; }
+.jssora02r.jssora02rdn { background-position: -63px -33px; }
+.jssora02l.jssora02lds { background-position: -3px -33px; opacity: .3; pointer-events: none; }
+.jssora02r.jssora02rds { background-position: -63px -33px; opacity: .3; pointer-events: none; }
+.jssort11-220-75 .p {    
+    position: absolute; 
+    top: 0;   
+    left: 0;
+    width: 220px;  
+    height: 75px;  
+    background: #d5d5d6;
+    background: -webkit-linear-gradient(#eff1f3, #d5d5d6);
+    background: -o-linear-gradient(#eff1f3, #d5d5d6);
+    background: -moz-linear-gradient(#eff1f3, #d5d5d6);
+    background: linear-gradient(#eff1f3, #d5d5d6);
+}
+.jssort11-220-75 .tp {   
+    position: absolute;  
+    padding: 10px;
+    top: 0;
+    left: 0;  
+    width: 100%; 
+    height: 100%;   
+    
+    border: none;
+    cursor: pointer;
+}
+.jssort11-220-75 .tp:hover {
+    background: #205f88;
+    background: -webkit-linear-gradient(#2b77a8, #205f88);
+    background: -o-linear-gradient(#2b77a8, #205f88);
+    background: -moz-linear-gradient(#2b77a8, #205f88);
+    background: linear-gradient(#2b77a8, #205f88);
+}
+
+.jssort11-220-75 .i,
+.jssort11-220-75 .pav:hover .i 
+{    
+    float: left;
+     width: 32.1%;
+     height: 45px; 
+     border: white 1px dashed;
+}
+* html .jssort11-220-75 .i {
+    float: left;
+    width: 32.1%;
+    height: 45px;
+}
+.jssort11-220-75 .pav .i { 
+    border: white 1px solid;
+    width: 32.1%;
+    height: 45px; 
+    display: block;
+    float: left;
+}
+.jssort11-220-75 .pav .c{
+    float: left;
+}
+.jssort11-220-75 .t{
+    float: left;
+    width: 67%;
+    line-height: 16px; 
+    color: #353535;   
+    font-size: 14px;
+    padding-left: 10px;
+}
+.jssort11-220-75 .t,
+.jssort11-220-75 .pav:hover .t {  
+    float: left;
+    width: 67%;
+    color: #353535;   
+}
+.jssort11-220-75 .pav .t,
+.jssort11-220-75 .p:hover .t { 
+    color: #fff;
+}
+.jssort11-220-75 .c,
+.jssort11-220-75 .pav:hover .c {  
+    line-height: 34px;  
+    color: #353535;  
+    font-size: 12px;  
+    font-weight: 400; 
+    overflow: hidden;
+}
+.jssort11-220-75 .pav .c, 
+.jssort11-220-75 .p:hover .c { 
+    color: #fff;
+}
+
+.jssort11-220-75 .p:hover,
+.jssort11-220-75 .pav:hover {  
+    background: #333;
+}
+.jssort11-220-75 .pav, 
+.jssort11-220-75 .p.pdn {  
+    background: #205f88;
+    background: -webkit-linear-gradient(#2b77a8, #205f88);
+    background: -o-linear-gradient(#2b77a8, #205f88);
+    background: -moz-linear-gradient(#2b77a8, #205f88);
+    background: linear-gradient(#2b77a8, #205f88);
+}*/
+
+
+.jssora08l, .jssora08r {
+    display: block;
+    position: absolute;
+    width: 27.198% !important;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    background: #ededed;
+    overflow: hidden;
+}
+.jssora08l {
+    padding-top: 5px;
+    /*background-position: -5px -35px;*/
+}
+.jssora08r {
+    padding-top: 5px;
+    /*background-position: -65px -35px;*/
+}
+.jssora08l:hover {
+/*    background-position: -5px -35px;
+    opacity: .8;
+    filter: alpha(opacity=80);*/
+}
+.jssora08r:hover {
+/*    background-position: -65px -35px;
+    opacity: .8;
+    filter: alpha(opacity=80);*/
+}
+.jssora08l.jssora08ldn {
+    background: #d9d8d8;
+}
+.jssora08r.jssora08rdn {
+    background: #d9d8d8;
+}
+.jssora08l.jssora08lds {
+    background-position: -5px -35px;
+    opacity: .3;
+    pointer-events: none;
+}
+.jssora08r.jssora08rds {
+    background-position: -65px -35px;
+    opacity: .3;
+    pointer-events: none;
+}
+.jssort11-198-74 .p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 198px;
+    height: 74px;
+    background: url('../img/bg-thumb_03.jpg') center repeat-x;
+}
+.jssort11-198-74 .tp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.jssort11-198-74 .i, .jssort11-198-74 .pav:hover .i {
+    position: absolute;
+    top: 17px;
+    left: 9px;
+    width: 50px;
+    height: 36px;
+    /*border: #fff 1px dashed;*/
+}
+* html .jssort11-198-74 .i {
+    width: 61px;
+    height: 34px;
+}
+.jssort11-198-74 .pav .i {
+    /*border: #fff 1px solid;*/
+}
+.jssort11-198-74 .t, .jssort11-198-74 .pav:hover .t {
+    position: absolute;
+    top: 3px;
+    left: 67px;
+    width: 128px;
+    height: 56px;
+    overflow: hidden;
+    line-height: 15px;
+    /*text-align: center;*/
+    color: #3d3c3c;
+    font-size: 13px;
+    /*font-weight: 700;*/
+}
+.jssort11-198-74 .pav .t, .jssort11-198-74 .p:hover .t {
+    color: #fff;
+}
+.jssort11-198-74 .c, .jssort11-198-74 .pav:hover .c {
+    position: absolute;
+    top: 40px;
+    left: 3px;
+    width: 192px;
+    height: 34px;
+    line-height: 34px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.jssort11-198-74 .pav .c, .jssort11-198-74 .p:hover .c {
+    color: #fc9835;
+}
+.jssort11-198-74 .t, .jssort11-198-74 .c {
+    /*transition: color 2s;
+    -moz-transition: color 2s;
+    -webkit-transition: color 2s;
+    -o-transition: color 2s;*/
+}
+.jssort11-198-74 .p:hover .t, .jssort11-198-74 .pav:hover .t, .jssort11-198-74 .p:hover .c, .jssort11-198-74 .pav:hover .c {
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
+}
+.jssort11-198-74 .p:hover, .jssort11-198-74 .pav:hover {
+    background: url('../img/bg_thumb_hover_03.jpg') center repeat-x;
+}
+.jssort11-198-74 .pav, .jssort11-198-74 .p.pdn {
+    background: url('../img/bg_thumb_hover_03.jpg') center repeat-x;
+}
+#jssor_1{
+    width: 100% !important;
+}
+#jssor_1 div:first-child{
+    width: 100% !important;
+}
+#jssor_1 div:first-child div[data-u=slides]:nth-child(3){
+    width: 72.8% !important;
+}
+.item-jssor-slider{
+    width: 100% !important;
+}
+#jssor_1 div:first-child div.jssort11-198-74 {
+    width: 27.198% !important;
+}
+#jssor_1 div:first-child div.jssort11-198-74 div[data-u=slides]:nth-child(3){
+    width: 100% !important;
+}
+.jssort11-198-74 div[data-u=slides]:nth-child(2) div{
+    padding: 10px;
+}
+.jssor-thumb{
+    padding: 10px;
+}
+
+
+
+
+
+@media(min-width:992px) and (max-width:1199px) {
+    #jssor_1 div:first-child div[data-u=slides]:nth-child(3){
+        width: 70.52% !important;
+    }
+    #jssor_1 div:first-child div.jssort11-198-74{
+        width: 29.48% !important;
+    }
+    .jssora08l, .jssora08r{
+        width: 29.48% !important;
+    }
+    .jssort11-198-74 .t, .jssort11-198-74 .pav:hover .t{
+        left: 59px;
+        width: 120px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    #jssor_1 div:first-child div[data-u=slides]:nth-child(3){
+        width: 100% !important;
+    }
+    #jssor_1 div:first-child div.jssort11-198-74, .jssora08l, .jssora08r {
+        display: none;
+    }
+    .slider .carousel-caption a{
+        font-size: 16px;
+        line-height: 24px;
+        max-height: 49px;
+    }
+}
+
+@media(min-width:480px) and (max-width:767px) {
+    /*#jssor_1 div:first-child div[data-u=slides]:nth-child(2){
+        width: 100% !important;
+    }*/
+    #jssor_1 div:first-child div[data-u=slides]:nth-child(3){
+        width: 100% !important;
+    }
+    #jssor_1 div:first-child div.jssort11-198-74, .jssora08l, .jssora08r {
+        display: none;
+    }
+    .slider .carousel-caption a{
+        font-size: 16px;
+        line-height: 24px;
+        max-height: 49px;
+    }
+    /*.item-jssor-slider img[data-u=image], .item-jssor-slider a{
+        width: 100% !important;
+    }*/
+}
+
+@media(max-width:479px) {
+    #jssor_1 div:first-child div[data-u=slides]:nth-child(3){
+        width: 100% !important;
+    }
+    #jssor_1 div:first-child div.jssort11-198-74, .jssora08l, .jssora08r {
+        display: none;
+    }
+}
+

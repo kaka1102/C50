@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="37c11d8ab2034838aad0adea5b0ec4e3" Name="Diagram1">
+        <EntityTypeShape EntityType="DataC50Model.LogHeThong_6_2016" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DataC50Model.LogHeThong_6_2017" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DataC50Model.Menu_Client" Width="1.5" PointX="3.75" PointY="9.25" />
+        <EntityTypeShape EntityType="DataC50Model.NhomAdmin" Width="1.5" PointX="0.75" PointY="19.625" />
+        <EntityTypeShape EntityType="DataC50Model.NhomQuyen" Width="1.5" PointX="3" PointY="17.25" />
+        <EntityTypeShape EntityType="DataC50Model.QuanLyBanner" Width="1.5" PointX="5.25" PointY="44.125" />
+        <EntityTypeShape EntityType="DataC50Model.QuanLyFileUpload" Width="1.5" PointX="7.5" PointY="27" />
+        <EntityTypeShape EntityType="DataC50Model.QuanLyThuMuc" Width="1.5" PointX="5.25" PointY="32.75" />
+        <EntityTypeShape EntityType="DataC50Model.TaiKhoan" Width="1.5" PointX="3" PointY="21.75" />
+        <EntityTypeShape EntityType="DataC50Model.TB_ThongKe" Width="1.5" PointX="7.75" PointY="14.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Baiviet" Width="1.5" PointX="5.25" PointY="36.25" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_BaiVietTrangGioiThieu" Width="1.5" PointX="6" PointY="52" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_BieuDo" Width="1.5" PointX="15" PointY="11" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_CapBac" Width="1.5" PointX="9.75" PointY="14.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_CauhoiTraLoi" Width="1.5" PointX="8.25" PointY="21" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ChiTietThuVien" Width="1.5" PointX="7.5" PointY="17.25" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ChuKyHienThiBanner" Width="1.5" PointX="7.5" PointY="44.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ChuKyHienThiQuangCao" Width="1.5" PointX="13.25" PointY="1.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ChuyenMucLuaChon" Width="1.5" PointX="6" PointY="10.125" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Danhsachbanglog" Width="1.5" PointX="15.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DanhSachCanBo" Width="1.5" PointX="18" PointY="1" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DanhSachChucVu" Width="1.5" PointX="15.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DanhSachTongDai" Width="1.5" PointX="17.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DapAnThamDo" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DatLich" Width="1.5" PointX="5.25" PointY="30.375" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_DonVicongTac" Width="1.5" PointX="17.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_donvithoigianbieudo" Width="1.5" PointX="12.75" PointY="11.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Hinhthucphamtoi" Width="1.5" PointX="10.75" PointY="11.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_HinhthucTraLoi" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Hosovuan" Width="1.5" PointX="13" PointY="7.25" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_HuongDanSuLyTinhHuong" Width="1.5" PointX="10.75" PointY="17.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_LichHienThiThamDoYKien" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_LienKetHopTac" Width="1.5" PointX="19.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Loaibieudo" Width="1.5" PointX="12.75" PointY="14.5" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_LogHeThong" Width="1.5" PointX="5.25" PointY="40.875" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_LogResetMatKhau" Width="1.5" PointX="5.25" PointY="15.25" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_logtraloithamdo" Width="1.5" PointX="19.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Menu" Width="1.5" PointX="0.75" PointY="15" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_quangcao" Width="1.5" PointX="11" PointY="1" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_QuyenSuDungFile" Width="1.5" PointX="10.75" PointY="24.875" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ThamDoYKien" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Thongtinthoitiet" Width="1.5" PointX="17" PointY="15.125" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Thongtintoipham" Width="1.5" PointX="10.75" PointY="7" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ThuVienClient" Width="1.5" PointX="5.25" PointY="22.375" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_TinBaoCongDan" Width="1.5" PointX="8.25" PointY="9.375" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_TinhThanh" Width="1.5" PointX="14.75" PointY="16.625" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_VanBan" Width="1.5" PointX="6" PointY="4.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Vitribv" Width="1.5" PointX="7.5" PointY="36.375" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_VitriQuangCao" Width="1.5" PointX="8.75" PointY="2.125" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_ViTriVanBan" Width="1.5" PointX="19.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DataC50Model.tbl_Ykienbandoc" Width="1.5" PointX="9.75" PointY="36.5" />
+        <EntityTypeShape EntityType="DataC50Model.Vitri_Menu" Width="1.5" PointX="6" PointY="48.875" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_BaiVietTrangGioiThieu_Menu_Client" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ChuyenMucLuaChon_Menu_Client" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ThuVienClient_Menu_Client" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_VanBan_Menu_Client_CoQuanBanHanh" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_VanBan_Menu_Client_LoaiVanBan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Vitribv_Menu_Client" />
+        <AssociationConnector Association="DataC50Model.FK_Vitri_Menu_Menu_Client" />
+        <AssociationConnector Association="DataC50Model.FK_NhomQuyen_NhomAdmin1" />
+        <AssociationConnector Association="DataC50Model.FK_TaiKhoan_NhomAdmin" />
+        <AssociationConnector Association="DataC50Model.FK_NhomQuyen_tbl_Menu" />
+        <AssociationConnector Association="DataC50Model.FK_QuanLyBanner_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ChuKyHienThiBanner_QuanLyBanner" />
+        <AssociationConnector Association="DataC50Model.FK_QuanLyFileUpload_QuanLyThuMuc" />
+        <AssociationConnector Association="DataC50Model.FK_QuanLyFileUpload_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_QuyenSuDungFile_QuanLyFileUpload" />
+        <AssociationConnector Association="DataC50Model.FK_QuanLyThuMuc_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Baiviet_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_CauhoiTraLoi_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_CauhoiTraLoi_TaiKhoan1" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_LogHeThong_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_LogResetMatKhau_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_QuyenSuDungFile_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ThuVienClient_TaiKhoan" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Vitribv_tbl_Baiviet" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_BieuDo_tbl_donvithoigianbieudo" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_BieuDo_tbl_Loaibieudo" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_CauhoiTraLoi_tbl_ChuyenMucLuaChon" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ChiTietThuVien_tbl_ThuVienClient" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ChuKyHienThiQuangCao_tbl_quangcao" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_TinBaoCongDan_tbl_ChuyenMucLuaChon" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_DanhSachCanBo_tbl_DanhSachChucVu" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_DapAnThamDo_tbl_ThamDoYKien" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Vitribv_tbl_DatLich" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Hosovuan_tbl_Hinhthucphamtoi" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ThamDoYKien_tbl_HinhthucTraLoi" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Hosovuan_tbl_Thongtintoipham" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_ThamDoYKien_tbl_LichHienThiThamDoYKien" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_quangcao_tbl_VitriQuangCao" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Thongtinthoitiet_tbl_TinhThanh" />
+        <AssociationConnector Association="DataC50Model.FK_tbl_Ykienbandoc_tbl_Vitribv" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,421 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <base>
+    <link rel="stylesheet" href="/GiaoDienAdmin/dist/css/AdminLTE.min.css">
+    <link href="/GiaoDienAdmin/bootstrap/css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/alter.css" rel="stylesheet" />
+
+    <link href="/GiaoDienAdmin/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/ionicons.min.css" rel="stylesheet" />
+
+    <script src="/GiaoDienAdmin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/ckeditor/ckeditor.js"></script>
+    <link href="/GiaoDienAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/corecss.css" rel="stylesheet" />
+
+
+    <link href="/GiaoDienAdmin/cssFolder/csschiakhung.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/window.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/windowall.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/jtreecsssss.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="browser.css">-->
+    <link href="../imagebrowser/browser/browser.css" rel="stylesheet" />
+    <style>
+        #dragTree {
+            padding: 10px;
+        }
+
+        .content {
+            padding-top: 50px !important;
+        }
+
+        .btn-block + .btn-block {
+            margin: 0px !important;
+        }
+
+        .btn-block {
+            display: inherit !important;
+            width: inherit !important;
+        }
+
+        .modal-dialog {
+            width: 300px !important;
+            margin: 150px auto !important;
+        }
+
+        .x-item-textbox {
+            width: 96px;
+            border: none;
+            text-align: center;
+        }
+
+        .panel-right {
+            padding: 0px !important;
+        }
+
+        .nav-tabs-custom {
+            box-shadow: none !important;
+        }
+
+        .x-grid-body {
+            border-width: 0px;
+            border-style: none !important;
+        }
+
+        #chiasesudung {
+            padding-top: 10px;
+        }
+
+        .thumbnail video {
+            width: auto;
+            height: auto;
+            max-width: 200px;
+            max-height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="content">
+        <div class="panel-container" style="position: relative;">
+            <div class="loader-parent" style="display:none">
+                <div class="loader"></div>
+            </div>
+            <div class="panel-left  box box-primary ">
+                <div class="box-header with-border">
+                    <h3 class="box-title">THƯ MỤC VIDEO</h3>
+                </div>
+                <div id="dragTree">
+                </div>
+            </div>
+            <div class="splitter">
+            </div>
+            <div class="panel-right">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs" id="ulmenu">
+                                <li class="active" id="lidanhsach"><a href="#danhsachanhhienthi" data-toggle="tab" aria-expanded="false"><i class="fa  fa-list-ul iconTab"></i>Danh sách file từ server</a></li>
+                                <li class="" id="liaddnew" style="display: none"><a href="#uploadvaothumuc" data-toggle="tab" aria-expanded="false"><i class="fa fa-edit iconTab"></i>Chọn file từ desktop</a></li>
+                            </ul>
+                            <div class="tab-content" id="frmnoidung">
+                                <div class="tab-pane active box-body" id="danhsachanhhienthi">
+                                    <div class="images-container" id="js-images-container">Loading..</div>
+                                </div>
+
+                                <div class="tab-pane " id="uploadvaothumuc" style="    min-height: 400px;padding-top:20px">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-9">
+                                                <input type="file" accept="audio/wav,audio/mpeg,video/avi,video/x-flv,video/*" id="anhdaidien" title="Chọn file từ máy tính (nhỏ hơn 10 mb)" />
+                                                <div class="" style="padding-top: 15px">
+                                                    <div id="preview" class="col-sm-6">
+                                                    </div>
+                                                    <div id="thongtin" class="col-sm-12">
+                                                        <h5 id="name-vid"></h5>
+                                                        <p id="size-vid"></p>
+                                                        <p id="type-vid"></p>
+                                                        <p id="kicthuoc" style="display: none"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="button" class="btn btn-primary btn-flat IconButtonPage" id="btnUploadFile"><i class="fa fa-upload iconButtonPage" aria-hidden="true"></i>Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="/GiaoDienAdmin/bootstrap/js/sweetalert2.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/alter.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/commonAlter.js"></script>
+
+    <script src="/GiaoDienAdmin/cssFolder/jtreemin.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/jquery-sezizable.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/windowall.js"></script>
+
+    <script type="text/javascript">
+        var stringTookenServer;
+        $(document).ready(function () {
+            $.getJSON('/SourceAdmin/ashx/XuLyAdmin.ashx', { type: 'getTookenByServer' }, function (danhsach) {
+                stringTookenServer = "";
+                if (danhsach != "") {
+                    stringTookenServer = danhsach.tooken;
+                }
+                else {
+                    stringTookenServer = "tooken fail";
+                }
+            });
+        });
+
+
+        $('#liaddnew').click(function () {
+            $(this).addClass('active');
+            $('#uploadvaothumuc').addClass('active');
+            $('#danhsachanhhienthi').removeClass('active');
+            $('#lidanhsach').removeClass('active');
+        });
+        $('#lidanhsach').click(function () {
+            $('#lidanhsach').addClass('active');
+            $('#danhsachanhhienthi').addClass('active');
+
+            $('#liaddnew').removeClass('active');
+            $('#uploadvaothumuc').removeClass('active');
+
+            hienthidanhsachvideotheothumuc();
+        });
+
+        $("#anhdaidien").change(function () {
+            $('.loader-parent').removeAttr('style');
+            renderVideo(this.files[0])
+        });
+
+
+        $(".panel-left").resizable({
+            handleSelector: ".splitter",
+            resizeHeight: false
+        });
+        $(".panel-top").resizable({
+            handleSelector: ".splitter-horizontal",
+            resizeWidth: false
+        });
+
+        var $menuthumuc = $('#dragTree');
+        var $dragTree = $('#dragTree');
+        $menuthumuc.jstree({
+            'core': {
+                'data': {
+                    'url': function (node) {
+                        return node.id === '#' ? '/SourceAdmin/ashx/XuLyAdmin.ashx?type=loaddanhsachthumucvideo&id_tm=0' : '/SourceAdmin/ashx/XuLyAdmin.ashx?type=loaddanhsachthumucvideo&id_tm=' + node.id;
+                    },
+                    'data': function (node) {
+                        return { 'id': node.id };
+                    }
+                },
+                'themes': {
+                    'responsive': false
+                }
+            },
+            'contextmenu': {
+                'items': function (node) {
+                    var tmp = $.jstree.defaults.contextmenu.items();
+                    delete tmp.create.action;
+
+                    var node_selected = $('#dragTree').jstree('get_selected', true);
+                    var _nodeGoc = node_selected[0].parent;
+                }
+            },
+            'types': {
+                'default': {
+                    'icon': 'fa fa-folder'
+                },
+                'file': {
+                    'icon': 'fa fa-file'
+                }
+            },
+            'unique': {
+                'duplicate': function (name, counter) {
+                    return name + ' ' + counter;
+                }
+            },
+            'plugins': ['state', 'dnd', 'sort', 'types', 'contextmenu', 'unique']
+        }).bind('select_node.jstree', function (e, data) {
+            var _idthumuc = "";
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            var idPar = node_selected[0].parent;
+            var idMe = node_selected[0].id;
+
+
+            if (idPar == "#" && idMe == 2) {
+                $('#js-images-container').empty();
+
+
+                $('#lidanhsach').addClass('active');
+                $('#danhsachanhhienthi').addClass('active');
+                $('#liaddnew').removeClass('active');
+                $('#uploadvaothumuc').removeClass('active');
+                hienthidanhsachvideochiase();
+            }
+            else {
+                $('#js-images-container').empty();
+                hienthidanhsachvideotheothumuc();
+            }
+        })
+
+
+        function hienthidanhsachvideochiase() {
+            $('#liaddnew').attr('style', 'display:none')
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+
+            var tableIMG = $.getJSON('/SourceAdmin/ashx/imagebrowser.ashx', { type: 'Showdanhsachvideoduocchiase' }, function (kq) {
+                var $imagesContainer = $('#js-images-container');
+                $.each(kq, function (_idx, imageData) {
+                    if (imageData.type == "audio/mpeg") {
+                        $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><video poster='/ThuMucGoc/AnhDaiDien/mp3-icon-23.png' src='" + imageData.image + "'></a>");
+                    } else {
+                        $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><video src='" + imageData.image + "'></a>");
+                    }
+
+                });
+                $(document).on('click', '.js-image-link', function () {
+                    window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, $(this).data('url'));
+                    window.close();
+                });
+
+            });
+        }
+        function hienthidanhsachvideotheothumuc() {
+            $('#liaddnew').removeAttr('style');
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            var idPar = node_selected[0];
+            var _idthumuc = idPar.id;
+            var tableIMG = $.getJSON('/SourceAdmin/ashx/imagebrowser.ashx', { type: 'Showdanhsachvideotrongthumuc', _idthumuc: _idthumuc }, function (kq) {
+                var $imagesContainer = $('#js-images-container');
+                $.each(kq, function (_idx, imageData) {
+                    if (imageData.type == "audio/mpeg") {
+                        $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><video poster='/ThuMucGoc/AnhDaiDien/mp3-icon-23.png' src='" + imageData.image + "'></a>");
+                    } else {
+                        $imagesContainer.append(" <a href='javascript://' class='thumbnail js-image-link' data-url='" + imageData.image + "'><video src='" + imageData.image + "'></a>");
+                    }
+
+                });
+
+
+                $(document).on('click', '.js-image-link', function () {
+                    window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, $(this).data('url'));
+                    window.close();
+                });
+            });
+        }
+
+
+        $('#btnUploadFile').click(function () {
+            var url = location.href;
+            var imgroot = url.match(/imgroot=([^&]*)/) ? url.match(/imgroot=([^&]*)/)[1] : null;
+            var CKEditorFuncNum = url.match(/CKEditorFuncNum=([0-9]+)/) ? url.match(/CKEditorFuncNum=([0-9]+)/)[1] : null;
+
+            var check = true;
+            _idthumuc = "";
+            var node_selected = $('#dragTree').jstree('get_selected', true);
+            _idthumuc = node_selected[0].id;
+
+            var anhdaidien = $('#anhdaidien').val();
+            var dungluong = $('#kicthuoc').text();
+            var tenfile = $('#name-vid').text();
+
+
+            var fd_data = new FormData();
+            fd_data.append('type', 'uploadFileVideoServer');
+            fd_data.append('fileanh', $('#anhdaidien')[0].files[0]);
+            fd_data.append('_idthumuc', _idthumuc);
+            fd_data.append('dungluong', dungluong);
+            fd_data.append('stringTookenClient', stringTookenServer);
+
+            if (anhdaidien == "") {
+                check = false;
+                $loading.remove();
+                common.showNotification('top', 'right', 'Mời bạn chọn file cần upload');
+            } else if (_idthumuc == "") {
+                check = false;
+                $loading.remove();
+                common.showNotification('top', 'right', 'Mời bạn chọn folder');
+            } else if (!valTextboxValue(tenfile)) {
+                check = false;
+                $loading.remove();
+                common.showNotification('top', 'right', 'Tên file không chứa ký tự đặc biệt ');
+            }
+
+            if (check) {
+
+                $('.loader-parent').removeAttr('style');
+                $.ajax({
+                    type: "POST",
+                    url: "/SourceAdmin/ashx/XuLyAdmin.ashx",
+                    data: fd_data,
+                    contentType: false,
+                    processData: false,
+                    success: function (kq) {
+                        $('.loader-parent').css('display', 'none');
+                        var data = JSON.parse(kq);
+                        if (data.sucess) {
+                            swal('Thông báo ', data.msg, 'success')
+                            $('#preview').html('');
+                            $('#anhdaidien').val('');
+                            $('#name-vid').html('');
+                            $('#size-vid').html('');
+                            $('#type-vid').html('');
+
+                            window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, data.videoResponse);
+                            window.close();
+                        } else {
+                            swal('Thông báo ', data.msg, 'error')
+                        }
+
+                    }
+                });
+            }
+        });
+
+
+        function humanFileSizeVideo(bytes, si) {
+            var thresh = si ? 1000 : 1024;
+            if (bytes < thresh) return bytes + ' B';
+            var units = si ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'] : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+            var u = -1;
+            do {
+                bytes /= thresh;
+                ++u;
+            } while (bytes >= thresh);
+            return bytes.toFixed(1) + ' ' + units[u];
+        }
+        function renderVideo(file) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                the_url = event.target.result
+                $('#preview').html("<video width='400' controls><source id='vid-source' src='" + the_url + "' type='video/mp4'></video>")
+                $('#name-vid').html(file.name)
+                $('#size-vid').html("Dung lượng : " + humanFileSizeVideo(file.size, "MB"))
+                $('#type-vid').html("Kiểu file : " + file.type)
+                $('#kicthuoc').html(humanFileSizeVideo(file.size, "MB"))
+                $('.loader-parent').css('display', 'none');
+            }
+
+            if (file.type.indexOf('video') == 0 || file.type.indexOf('audio') == 0) {
+                reader.readAsDataURL(file);
+            } else {
+                $('.loader-parent').css('display', 'none');
+
+                $('#name-vid').html(file.name)
+                $('#size-vid').html("Dung lượng : " + humanFileSizeVideo(file.size, "MB"))
+                $('#type-vid').html("Kiểu file : " + file.type)
+                $('#kicthuoc').html(humanFileSizeVideo(file.size, "MB"))
+            }
+
+        }
+        function valTextboxValue(giatri) {
+            var mk = /^(([^<>&$#!()\[\]\\"])){2,500}$/;
+            return mk.test(giatri);
+        }
+    </script>
+
+</body>
+</html>

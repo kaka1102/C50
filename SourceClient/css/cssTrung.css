@@ -1,0 +1,157 @@
+﻿/****gioi-thieu-lanh-dao*****/
+
+
+
+.tree ul {
+    padding-top: 20px; position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li {
+    /*float: left;*/ 
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 0px 0 0px;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    /*border-top: 1px solid #ccc;*/
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    /*border-left: 1px solid #ccc;*/
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+    /*border-right: 1px solid #ccc;*/
+/*    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;*/
+}
+/*.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}*/
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    /*border-left: 1px solid #ccc;*/
+    width: 0; height: 20px;
+}
+
+.tree li a{
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    display: inline-block;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+/*.tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}*/
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+    /*border-color:  #94a0b4;*/
+}
+
+
+
+
+
+
+.ten-cap-bac{
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.ten-cap-bac:before{
+    content: "";
+    top: 31px;
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    position: absolute;
+    border-bottom: 1px solid #e7e7e7;
+}
+.content-right .ten-cap-bac h2{
+    display: inline-block;
+    font-size: 22px;
+    position: relative;
+    background: #fff;
+    padding: 0 20px;
+}
+.tree ul>li .border-ld{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px 23px;
+    background: #e7e7e7; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#fff, #e7e7e7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fff, #e7e7e7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fff, #e7e7e7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff, #e7e7e7); /* Standard syntax */
+    border: 1px solid #c3c3c3;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+    -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+    box-shadow:inset 0px 0px 0px 1px #fff;
+    margin: 0px 7px 0px;
+}
+.img-ld a{
+    margin-top: 13px;
+    display: flex !important;
+    width: 114px;
+    margin: 0 auto;
+    height: 148px;
+    overflow: hidden;
+    text-align: center;
+}
+.img-ld a img{
+    display: flex;
+    margin: auto;
+}.info-ld a{
+    text-decoration: none;
+}
+.info-ld a h3{
+    font-size: 15px;
+    color: #353535;
+    margin-top: 13px;
+    margin-bottom: 5px;
+}
+.info-ld p{
+    font-size: 15px;
+    color: #353535;
+    font-weight: normal;
+}

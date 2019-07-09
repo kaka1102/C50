@@ -1,0 +1,440 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin-Cục C50</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" href="/ThuMucGoc/AnhDaiDien/logoc50.png" sizes="32x32" />
+    <link rel="icon" href="/ThuMucGoc/AnhDaiDien/logoc50.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="/ThuMucGoc/AnhDaiDien/logoc50.png" />
+    <meta name="msapplication-TileImage" content="/ThuMucGoc/AnhDaiDien/logoc50.png" />
+    <base href="/">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="/GiaoDienAdmin/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/ionicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/GiaoDienAdmin/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/GiaoDienAdmin/dist/css/skins/_all-skins.min.css">
+    <link href="/GiaoDienAdmin/bootstrap/css/jquery-ui.css" rel="stylesheet" />
+
+    <link href="/GiaoDienAdmin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/bootstrap/css/sweetalert2.min.css" rel="stylesheet" />
+
+    <link href="/GiaoDienAdmin/bootstrap/css/alter.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/plugins/fancybox/fancybox-3.0/dist/jquery.fancybox.css" rel="stylesheet" />
+
+
+    <link href="/GiaoDienAdmin/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+
+    <%--CSS FOLDER--%>
+    <link href="/GiaoDienAdmin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/GiaoDienAdmin/cssFolder/icons.css" rel="stylesheet" />
+    <%--<link href="/GiaoDienAdmin/cssFolder/corecss.css" rel="stylesheet" />--%>
+    <link href="/GiaoDienAdmin/cssFolder/jtreecsssss.css" rel="stylesheet" />
+    <%--css thu muc--%>
+    <script src="/GiaoDienAdmin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/Promisss.js"></script>
+    <script src="/GiaoDienAdmin/plugins/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/GiaoDienAdmin/plugins/jQueryUI/jquery-ui.js"></script>
+    <style>
+        .dataTables_length {
+            display: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            li.paginate_button.previous {
+                display: inline;
+            }
+
+            li.paginate_button.next {
+                display: inline;
+            }
+
+            li.paginate_button {
+                display: none;
+            }
+        }
+    </style>
+    <style>
+       
+    </style>
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+    <div class="wrapper">
+        <div class="loader-parent" style="display: none">
+            <div class="loader"></div>
+        </div>
+        <header class="main-header">
+            <a id="linklogoadmin" class="logo">
+                <span class="logo-mini">
+                    <img width="75" class="img-responsive" src="/SourceClient/img/logo.png" /></span>
+                <span class="logo-lg">
+                    <img src="/SourceClient/img/center.png" class="img-responsive" /></span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+                <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu navbar-left nav-marquee">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <marquee width="100%" scrollamount="4">ĐOÀN KẾT - KỶ CƯƠNG - TRÁCH NHIỆM - HIỆU QUẢ</marquee>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="image" id="avatarAD" runat="server">
+                    </div>
+                    <div class="info">
+                        <p id="tenadmin11" runat="server"></p>
+                        <p id="email" runat="server" style="color: #01bb66"></p>
+                    </div>
+                    <div class="clearfix" style="font-size: 16px; padding-top: 10px;">
+                        <a class="" id="btnProfile" title="Thông tin tài khoản"><i class="fa fa-cog"></i></a>&nbsp;&nbsp;
+                        <a class="" id="btnLogout" title="Đăng xuất"><i class="fa fa-power-off"></i></a>
+                    </div>
+                </div>
+                <div class="sidebar-menu div-menu" id="menuadmin" runat="server">
+                </div>
+            </section>
+        </aside>
+        <div id="ct" class="content-wrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.11
+            </div>
+            <strong>Copyright &copy; 2017 <a href="http://quantriwebhanoi.com/">QTW</a>.</strong> All rights
+    reserved.
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                                    <p>New phone +1(800)555-1234</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                                    <p>nora@example.com</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                                    <p>Execution time 5 seconds</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">Update Resume
+                <span class="label label-success pull-right">95%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Other sets of options are available
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Allow the user to show his name in blog posts
+                            </p>
+                        </div>
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Show me as online
+              <input type="checkbox" class="pull-right" checked>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Turn off notifications
+              <input type="checkbox" class="pull-right">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </aside>
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <div class="modal fade" id="ModalView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id=""></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-flat pull-left iconthoatModal" data-dismiss="modal"><i class="fa fa fa-times iconiModal"></i>Thoát</button>
+                    <button type="button" class="btn btn-primary btn-flat IconButtonPage"><i class="fa fa-save iconButtonPage"></i>Lưu thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModalFolder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="box box-warning box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title" id="tieudeModel"></h3>
+                </div>
+                <div class="box-body" id="modalFolBody">
+                </div>
+                <div class="modal-footer" id="modelSuDung_ft">
+                    <button type="button" class="btn btn-danger btn-flat pull-left iconthoatModal" id="btnHuy" data-dismiss="modal"><i class="fa fa fa-times iconiModal"></i>Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="ModalLichHienthi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="box box-warning box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title" id="titleModal"></h3>
+                </div>
+                <div class="box-body" id="modalCalBody">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <div class="col-sm-12" style="padding-top: 20px">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="box box-info">
+                                                <div class="box-header" id="titleherader">
+                                                    Thời gian lịch trùng nhau sẽ dựa vào chế độ ưu tiên để hiển thị
+                                                                    <div class="pull-right box-tools">
+                                                                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                                            <i class="fa fa-minus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                </div>
+                                                <div class="box-body pad" id="datlich">
+                                                    <div class="form-horizontal" id="form_lich">
+
+                                                        <div class="form-group" id="uutien">
+                                                            <label for="inputName" class="col-sm-4 control-label">Ưu tiên hiển thị<span class="required-admin">*</span></label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="uutienhienthi" placeholder="Nhập số , số càng lớn chế độ ưu tiên càng cao">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" id="frmtrangthai">
+                                                            <label for="inputEmail" class="col-sm-4 control-label">Trạng thái</label>
+                                                            <div class=" col-sm-8" id="frmHienthi">
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="optionsRadios" value="hienthi" checked="true" id="hienthi">Hiển thị ngay
+                                                                    </label>
+                                                                </div>
+                                                                <div class="radio" id="radiohengio">
+                                                                    <label>
+                                                                        <input type="radio" name="optionsRadios" value="hengio" checked="" id="hengio">Hẹn giờ hiển thị
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div id="toanthoigian">
+                                                            <div class="form-group" id="ngaybatdau">
+                                                                <label for="inputName" class="col-sm-4 control-label">Ngày bắt đầu <span class="required-admin">*</span></label>
+                                                                <div class="col-sm-8" id="batdautime">
+                                                                    <div class="input-group date">
+                                                                        <div class="input-group-addon">
+                                                                            <i class="fa fa-calendar"></i>
+                                                                        </div>
+                                                                        <input type="text" class="form-control pull-right" id="fullDateStart">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group" id="ngayketthucc">
+                                                                <label for="inputName" class="col-sm-4 control-label" id="">Ngày kết thúc<span class="required-admin">*</span></label>
+                                                                <div class="col-sm-8" id="ketthutime">
+                                                                    <div class="input-group date">
+                                                                        <div class="input-group-addon">
+                                                                            <i class="fa fa-calendar"></i>
+                                                                        </div>
+                                                                        <input type="text" class="form-control pull-right" id="fullDateEnd">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" id="modelCal_ft">
+                    <button type="button" class="btn  btn-danger btn-flat pull-left iconthoatModal" id="btnCances" data-dismiss="modal"><i class="fa fa-times iconiModal" aria-hidden="true"></i>Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/GiaoDienAdmin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/sweetalert2.js"></script>
+    <script src="/GiaoDienAdmin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/moment.min.js"></script>
+    <%--<script src="/GiaoDienAdmin/dist/js/app.min.js"></script>--%>
+
+    <script src="/GiaoDienAdmin/dist/js/app.js"></script>
+
+    <script src="/GiaoDienAdmin/dist/js/demo.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/jtreemin.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/jquery-sezizable.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/alter.js"></script>
+    <script src="/GiaoDienAdmin/bootstrap/js/commonAlter.js"></script>
+    <script src="/GiaoDienAdmin/plugins/fancybox/fancybox-3.0/dist/jquery.fancybox.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/html5gallery/html5gallery.js"></script>
+    <script src="/GiaoDienAdmin/plugins/googledoc/jquery.gdocsviewer.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/select2/select2.full.min.js"></script>
+    <script src="/GiaoDienAdmin/cssFolder/windowall.js"></script>
+    <script src="/GiaoDienAdmin/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="/GiaoDienAdmin/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="/GiaoDienAdmin/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/iCheck/icheck.min.js"></script>
+    <script src="/GiaoDienAdmin/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="/GiaoDienAdmin/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="/SourceAdmin/js/jsMasterAdmin.js"></script>
+    <script src="/SourceAdmin/js/JavaScriptXuLyAdmin.js"></script>
+</body>
+</html>
+

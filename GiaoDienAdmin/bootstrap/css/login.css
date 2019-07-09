@@ -1,0 +1,174 @@
+﻿body {
+    font-family: "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.iconiModal {
+    padding-right: 10px;
+}
+
+
+
+.gt-panel {
+    background-color: #fff;
+    border: 1px #ccc solid;
+    -webkit-box-shadow: 2px 2px 4px 0 #8e8e8e;
+    -moz-box-shadow: 2px 2px 4px 0 #8e8e8e;
+    box-shadow: 2px 2px 4px 0 #8e8e8e;
+    border-color: transparent;
+    padding: 25px;
+}
+
+.gt-logo {
+    text-align: center;
+}
+
+.gt-title {
+    text-align: center;
+    line-height: normal;
+}
+
+form {
+    padding: 5px 0;
+}
+
+.gt-title h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #e14602;
+    margin: 5px 0;
+    padding: 20px 0;
+    line-height: 18px;
+}
+
+.gt-title p {
+    font-size: 15px;
+    margin: 5px 0;
+    padding: 10px 0;
+    line-height: 15px;
+}
+
+.md-form-group {
+    padding: 18px 0 24px;
+    position: relative;
+}
+
+.md-input {
+    background: 0 0;
+    position: relative;
+    z-index: 5;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(160,160,160,.2);
+    width: 100%;
+    height: 34px;
+    padding: 2px;
+    color: inherit;
+}
+
+    .md-input.focus, .md-input:focus {
+        border-bottom: #0a79f9 solid 2px;
+        padding-bottom: 1px;
+        outline: none;
+    }
+
+        .md-input.focus ~ label, .md-input:focus ~ label {
+            color: #0a79f9;
+            opacity: 1;
+            top: 0 !important;
+            font-size: .85em !important;
+        }
+
+.float-label .md-input ~ label {
+    top: 20px;
+    font-size: 1em;
+}
+
+.float-label .md-input.has-value ~ label, .float-label .md-input.ng-dirty ~ label, .md-input ~ label {
+    top: 0;
+    font-size: .85em;
+}
+
+.md-input ~ label {
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    position: absolute;
+    z-index: 0;
+    opacity: .5;
+    left: 0;
+}
+
+.md-input.disabled, .md-input[disabled] {
+    opacity: .5;
+}
+
+textarea.md-input {
+    height: auto;
+}
+
+.md-input-white.focus, .md-input-white:focus {
+    border-color: #fff;
+}
+
+    .md-input-white.focus ~ label, .md-input-white:focus ~ label {
+        color: #fff;
+    }
+
+.md-input-msg {
+    position: absolute;
+    bottom: 0;
+    line-height: 24px;
+    font-size: .85em;
+}
+
+.p-l-md, .p-x-md {
+    padding-left: 1.5rem !important;
+}
+
+.p-r-md, .p-x-md {
+    padding-right: 1.5rem !important;
+}
+
+.primary, .success, .warn, .warning {
+    color: rgba(255,255,255,.87);
+}
+
+.btn {
+    font-weight: 500;
+    outline: 0 !important;
+}
+
+.primary {
+    background-color: #0a79f9;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .85rem;
+}
+
+.tt-foot {
+    text-align: right;
+}
